@@ -334,7 +334,7 @@ class CarlaEnv(gym.Env):
 
         # set segmentation camera sensor
         self.camera_segmentation.listen(lambda image: self._parse_image1(weak_self, image,
-                                                                cc.Raw, 'seg'))
+                                                                cc.CityScapesPalette, 'seg'))
         while len(self._image_segmentation) < 4:
             print("resetting segmentation")
             time.sleep(0.001)

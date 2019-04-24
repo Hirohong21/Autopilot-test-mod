@@ -650,7 +650,7 @@ class CarlaEnv(gym.Env):
             (ENV_CONFIG["x_res"], ENV_CONFIG["y_res"]),
             pygame.HWSURFACE | pygame.DOUBLEBUF)
         # surface = pygame.surfarray.make_surface(env._image_rgb1[-1].swapaxes(0, 1))
-        surface = pygame.surfarray.make_surface(env._obs_collect[-1][:, :, 0:3].swapaxes(0, 1))
+        surface = pygame.surfarray.make_surface(self._obs_collect[-1][:, :, 0:3].swapaxes(0, 1))
         display.blit(surface, (0, 0))
         time.sleep(0.01)
         pygame.display.flip()
